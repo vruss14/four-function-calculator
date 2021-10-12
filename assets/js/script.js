@@ -3,11 +3,11 @@ let displayInputs = "";
 document.querySelectorAll('.input').forEach(btn => {
     btn.addEventListener('click', () => {
 
-        // Resets the calculator back to 000000 if user desires to clear it
+        // Resets the calculator back to 0 if user desires to clear it
 
         if(btn.textContent === "AC") {
             displayInputs = "";
-            document.getElementById("screen-content").textContent = "000000";
+            document.getElementById("screen-content").textContent = "0";
             return;
         }
 
