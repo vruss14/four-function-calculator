@@ -29,8 +29,9 @@ document.querySelectorAll('.input').forEach(btn => {
     })
 })
 
-// You are looking for a pattern: Number, operator, number
-// Once you do this pattern, it becomes another number and then you look again for number, operator, number
+// Calculation pattern: Number, operator, number
+// The calculator can use this pattern and return another number, which then feeds into the next calculation
+// unshift() adds the returned number back to the beginning of the calculation array to continue calculating left to right
 // A while loop is used for uncertain inputs; we aren't sure how many numbers and operators the user will input
 
 function calculate() {
@@ -51,12 +52,14 @@ function calculate() {
             console.log("Error: Please try again.")
         }
     }
-    console.log(calculation[0]);
+    displayResult(calculation[0]);
     return calculation[0];
 }
 
+// Needs to use parseFloat to work with integers AND decimals properly
+
 function addition(a, b) {
-    return parseInt(a) + parseInt(b);
+    return parseFloat(a) + parseFloat(b);
 }
 
 function subtraction(a, b) {
@@ -69,4 +72,9 @@ function multiply(a, b) {
 
 function divide(a, b) {
     return a / b;
+}
+
+function displayResult(result) {
+    displayInputs = "";
+    document.getElementById("screen-content").textContent = result;
 }
