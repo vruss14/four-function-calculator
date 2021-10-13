@@ -70,7 +70,12 @@ function multiply(a, b) {
     return a * b;
 }
 
+// Prevent errors when dividing by zero
+
 function divide(a, b) {
+    if(parseInt(b) === 0) {
+        return 'ERROR'
+    }
     return a / b;
 }
 
